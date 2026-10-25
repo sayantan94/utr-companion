@@ -1,0 +1,16 @@
+research/input/
+research/decompiled/
+research/native/
+research/logs/
+research/certificates/
+*.apk
+*.xapk
+*.ipa
+.DS_Store
+ios/build/
+ios/UTRCore/.build/
+ios/*.xcodeproj/xcuserdata/
+*.xcuserstate
+local.settings.json
+ios/*.log
+ios/UTRCore/.swiftpm/

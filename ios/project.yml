@@ -1,0 +1,35 @@
+name: UTRCompanion
+options:
+  bundleIdPrefix: com.sayantan
+  deploymentTarget:
+    iOS: '17.0'
+packages:
+  UTRCore:
+    path: UTRCore
+settings:
+  base:
+    SWIFT_VERSION: '6.0'
+    TARGETED_DEVICE_FAMILY: '1'
+targets:
+  UTRCompanion:
+    type: application
+    platform: iOS
+    sources: [App]
+    dependencies:
+      - package: UTRCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sayantan.utrcompanion
+        CODE_SIGN_ENTITLEMENTS: App/UTRCompanion.entitlements
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: UTR
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: Connect to your Audi recorder to read settings, update its clock automatically, and access recordings.
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+    info:
+      path: App/Info.plist
+      properties:
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    scheme:
+      testTargets: []

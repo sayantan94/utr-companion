@@ -1,0 +1,125 @@
+<div id="utr-concept" class="viz-dotted-background">
+  <style>
+    #utr-concept{padding:24px 12px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    #utr-concept .utr-app{--utr-bg:light-dark(#f7f7f5,#111212);--utr-panel:light-dark(#fff,#1c1d1d);--utr-ink:light-dark(#17191a,#f4f5f2);--utr-sub:light-dark(#636867,#a7aeab);--utr-line:light-dark(#e1e5e1,#323635);--utr-accent:light-dark(#b92e36,#ff777c);--utr-action:light-dark(#17191a,#f0f2ec);--utr-inverse:light-dark(#fff,#161817);--utr-green:light-dark(#246b4f,#8fd4ae);width:100%;max-width:398px;margin:auto;background:var(--utr-bg);color:var(--utr-ink);border:1px solid var(--utr-line);border-radius:28px;overflow:hidden;position:relative;box-shadow:0 16px 50px light-dark(#17212114,#00000030);font-size:15px;line-height:1.45}
+    #utr-concept *{box-sizing:border-box}
+    #utr-concept button,#utr-concept select,#utr-concept input{font:inherit}
+    #utr-concept button{color:inherit}
+    #utr-concept .utr-top{display:flex;align-items:center;justify-content:space-between;padding:24px 24px 14px;gap:12px}
+    #utr-concept .utr-wordmark{font-size:21px;font-weight:650;letter-spacing:-1px;display:flex;align-items:center;gap:8px}
+    #utr-concept .utr-slash{display:block;width:4px;height:18px;transform:skew(-20deg);background:var(--utr-accent)}
+    #utr-concept .utr-demo{font-size:10px;letter-spacing:1.3px;color:var(--utr-sub);font-weight:600}
+    #utr-concept .utr-content{padding:14px 24px 26px;min-height:560px}
+    #utr-concept .utr-eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--utr-sub);font-weight:600;text-transform:uppercase;margin:0 0 8px}
+    #utr-concept h2{font-size:32px;letter-spacing:-1.2px;line-height:1.12;font-weight:600;margin:0 0 12px}
+    #utr-concept h3{font-size:16px;font-weight:600;margin:0}
+    #utr-concept p{margin:0}
+    #utr-concept .utr-muted{color:var(--utr-sub);font-size:13px;line-height:1.6}
+    #utr-concept .utr-status{display:flex;align-items:center;gap:7px;color:var(--utr-sub);font-size:12px}
+    #utr-concept .utr-status.online{color:var(--utr-green)}
+    #utr-concept .utr-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+    #utr-concept .utr-view{margin:22px 0 16px;background:var(--utr-panel);border-radius:var(--utr-preview-radius,18px);border:1px solid var(--utr-line);padding:18px;position:relative}
+    #utr-concept .utr-view-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--utr-sub)}
+    #utr-concept .utr-view-center{height:147px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:repeating-linear-gradient(0deg,transparent,transparent 23px,var(--utr-line) 24px),repeating-linear-gradient(90deg,transparent,transparent 23px,var(--utr-line) 24px);margin:12px 0;border-radius:8px;color:var(--utr-sub)}
+    #utr-concept .utr-view-center span{background:var(--utr-panel);padding:3px 10px;font-size:12px}
+    #utr-concept .utr-view-center svg{width:26px;height:26px;background:var(--utr-panel);box-sizing:content-box;padding:10px;border-radius:12px}
+    #utr-concept .utr-camera-tabs{display:flex;gap:6px}
+    #utr-concept .utr-camera-tabs button{border:0;background:transparent;padding:9px 15px;min-height:40px;border-radius:10px;flex:1;color:var(--utr-sub);font-size:12px}
+    #utr-concept .utr-camera-tabs button[aria-pressed=true]{background:var(--utr-bg);color:var(--utr-ink);font-weight:600}
+    #utr-concept .utr-primary{border:0;background:var(--utr-action);color:var(--utr-inverse);border-radius:12px;min-height:48px;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-weight:550;font-size:14px}
+    #utr-concept .utr-secondary{border:1px solid var(--utr-line);background:var(--utr-panel);border-radius:12px;min-height:46px;padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:13px;margin-top:10px}
+    #utr-concept .utr-help{border:0;background:transparent;color:var(--utr-sub);font-size:12px;min-height:44px;padding:10px 0;display:block;margin:0 auto}
+    #utr-concept .utr-section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:25px 0 10px}
+    #utr-concept .utr-section-head span{font-size:11px;color:var(--utr-sub)}
+    #utr-concept .utr-link{border:0;background:transparent;padding:8px 0;font-size:12px;color:var(--utr-sub);min-height:40px}
+    #utr-concept .utr-clip{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--utr-line);background:transparent;padding:13px 0;min-height:78px}
+    #utr-concept .utr-thumb{width:58px;height:48px;flex-shrink:0;border-radius:9px;background:var(--utr-panel);border:1px solid var(--utr-line);display:flex;align-items:center;justify-content:center;color:var(--utr-sub)}
+    #utr-concept .utr-clip-text{flex:1;min-width:0}
+    #utr-concept .utr-clip-text strong{font-size:14px;font-weight:550;display:block}
+    #utr-concept .utr-clip-text small{font-size:11px;color:var(--utr-sub);display:block;margin-top:3px}
+    #utr-concept .utr-clip>svg{width:15px;color:var(--utr-sub)}
+    #utr-concept .utr-nav{display:flex;justify-content:space-around;gap:4px;padding:10px 14px 16px;background:var(--utr-panel);border-top:1px solid var(--utr-line)}
+    #utr-concept .utr-nav button{border:0;background:transparent;min-height:51px;padding:8px;display:flex;align-items:center;flex-direction:column;gap:6px;color:var(--utr-sub);font-size:10px;flex:1;border-radius:10px}
+    #utr-concept .utr-nav button[aria-current=page]{color:var(--utr-accent)}
+    #utr-concept .utr-nav svg{width:20px;height:20px}
+    #utr-concept .utr-filters{display:flex;gap:4px;border-bottom:1px solid var(--utr-line);margin:20px 0 18px}
+    #utr-concept .utr-filters button{background:transparent;border:0;border-bottom:2px solid transparent;padding:11px 4px;flex:1;font-size:12px;min-height:44px;color:var(--utr-sub)}
+    #utr-concept .utr-filters button[aria-pressed=true]{border-bottom-color:var(--utr-accent);color:var(--utr-ink)}
+    #utr-concept .utr-callout{padding:14px 16px;border:1px solid var(--utr-line);border-radius:12px;font-size:12px;color:var(--utr-sub);display:flex;gap:10px;align-items:flex-start;margin:18px 0}
+    #utr-concept .utr-callout svg{flex-shrink:0;margin-top:2px}
+    #utr-concept .utr-setting{padding:17px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--utr-line);font-size:14px}
+    #utr-concept .utr-setting small{display:block;font-size:11px;color:var(--utr-sub);margin-top:4px}
+    #utr-concept .utr-setting input[type=checkbox]{width:22px;height:22px;accent-color:var(--utr-accent);flex-shrink:0}
+    #utr-concept .utr-setting select{border:1px solid var(--utr-line);background:var(--utr-panel);color:var(--utr-ink);border-radius:8px;padding:8px;font-size:13px;max-width:115px;min-height:44px}
+    #utr-concept .utr-overlay{position:absolute;inset:0;background:light-dark(#11182750,#00000080);z-index:10;display:flex;align-items:flex-end}
+    #utr-concept .utr-overlay[hidden]{display:none}
+    #utr-concept .utr-sheet{background:var(--utr-panel);border-radius:24px 24px 0 0;width:100%;padding:24px;color:var(--utr-ink)}
+    #utr-concept .utr-sheet-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}
+    #utr-concept .utr-sheet h2{font-size:25px;margin-bottom:0}
+    #utr-concept .utr-close{border:0;background:var(--utr-bg);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+    #utr-concept .utr-steps{list-style:none;padding:0;margin:22px 0}
+    #utr-concept .utr-steps li{display:flex;align-items:flex-start;gap:13px;margin:18px 0;font-size:14px}
+    #utr-concept .utr-step-num{width:26px;height:26px;border-radius:50%;background:var(--utr-bg);color:var(--utr-sub);display:grid;place-items:center;font-size:11px;flex-shrink:0}
+    #utr-concept .utr-steps small{display:block;color:var(--utr-sub);font-size:12px;margin-top:4px;line-height:1.5}
+    #utr-concept .utr-notice{font-size:11px;color:var(--utr-sub);text-align:center;min-height:17px;margin-top:13px}
+    #utr-concept .utr-empty{padding:36px 8px;text-align:center;color:var(--utr-sub);font-size:13px}
+    @media(max-width:370px){#utr-concept{padding:12px 0}#utr-concept .utr-content{padding:14px 18px 24px}#utr-concept .utr-top{padding:20px 18px 12px}#utr-concept .utr-sheet{padding:20px 18px}#utr-concept h2{font-size:29px}}
+  </style>
+  <article class="utr-app" aria-label="UTR mobile app concept">
+    <header class="utr-top"><div class="utr-wordmark"><span class="utr-slash"></span>utr<span style="font-weight:400;letter-spacing:0;font-size:13px;color:var(--utr-sub)"> / companion</span></div><span class="utr-demo">CONCEPT / DEMO</span></header>
+    <main class="utr-content"></main>
+    <nav class="utr-nav" aria-label="Main navigation">
+      <button type="button" class="cursor-interaction" data-page="camera" aria-current="page"><i data-lucide="camera" aria-hidden="true"></i>Camera</button>
+      <button type="button" class="cursor-interaction" data-page="recordings"><i data-lucide="film" aria-hidden="true"></i>Recordings</button>
+      <button type="button" class="cursor-interaction" data-page="settings"><i data-lucide="sliders-horizontal" aria-hidden="true"></i>Settings</button>
+    </nav>
+    <div class="utr-overlay" hidden><section class="utr-sheet" role="dialog" aria-modal="true" aria-labelledby="utr-dialog-title"></section></div>
+  </article>
+  <script>
+    (()=>{
+      const root=document.getElementById('utr-concept');
+      const content=root.querySelector('.utr-content');
+      const overlay=root.querySelector('.utr-overlay');
+      const sheet=root.querySelector('.utr-sheet');
+      const clips=[{id:1,name:'Parking event',time:'10:42 AM',duration:'00:20',type:'Parking',camera:'Front + rear'},{id:2,name:'Morning drive',time:'9:18 AM',duration:'01:00',type:'Driving',camera:'Front + rear'},{id:3,name:'Impact detected',time:'8:56 AM',duration:'00:20',type:'Events',camera:'Front + rear'}];
+      const defaults={page:'camera',connected:false,camera:'Front',filter:'All',saved:[],audio:false,gps:true,sensitivity:'Medium'};
+      const savedState=window.openai?.widgetState?.privateContent;
+      const state={...defaults,...(savedState?.version===1?savedState.state:{})};
+      let returnFocus=null;
+      const icon=name=>`<i data-lucide="${name}" aria-hidden="true"></i>`;
+      const icons=()=>{if(globalThis.lucide)lucide.createIcons({attrs:{width:18,height:18}})};
+      const persist=()=>window.openai?.setWidgetState({modelContent:{screen:state.page,connection:'simulated',filter:state.filter},privateContent:{version:1,state}})?.catch(()=>{});
+      const clipRow=c=>`<button type="button" class="utr-clip cursor-interaction" data-clip="${c.id}"><span class="utr-thumb">${icon(c.type==='Parking'?'shield-check':c.type==='Events'?'activity':'video')}</span><span class="utr-clip-text"><strong>${c.name}</strong><small>${c.time} · ${c.duration}${state.saved.includes(c.id)?' · Saved':''}</small></span>${icon('chevron-right')}</button>`;
+      const connection=()=>`<div class="utr-status ${state.connected?'online':''}"><span class="utr-dot"></span>${state.connected?'Connected · demo state':'Recorder disconnected'}</div>`;
+      function render(){
+        root.querySelectorAll('[data-page]').forEach(b=>b.setAttribute('aria-current',b.dataset.page===state.page?'page':'false'));
+        if(state.page==='camera')content.innerHTML=`<p class="utr-eyebrow">Your recorder</p><h2>${state.connected?'Ready when you are.':'Every drive.<br>Within reach.'}</h2>${connection()}<div class="utr-view"><div class="utr-view-head"><span>${state.camera} camera</span>${icon(state.connected?'wifi':'wifi-off')}</div><div class="utr-view-center">${icon(state.connected?'video':'camera-off')}<span>${state.connected?'Live video appears here':'Connect to see your cameras'}</span></div><div class="utr-camera-tabs" aria-label="Camera selection">${['Front','Rear'].map(c=>`<button type="button" class="cursor-interaction" data-camera="${c}" aria-pressed="${state.camera===c}">${c}</button>`).join('')}</div></div><button type="button" class="utr-primary cursor-interaction" data-action="${state.connected?'recordings':'connect'}">${icon(state.connected?'film':'wifi')}${state.connected?'Browse recordings':'Connect recorder'}${icon('arrow-right')}</button><button type="button" class="utr-help cursor-interaction" data-action="${state.connected?'disconnect':'help'}">${state.connected?'Disconnect demo':'Having trouble connecting?'}</button><div class="utr-section-head"><h3>Saved on your phone</h3><button type="button" class="utr-link cursor-interaction" data-action="saved">View all</button></div>${state.saved.length?clips.filter(c=>state.saved.includes(c.id)).slice(0,1).map(clipRow).join(''):`<p class="utr-muted">Keep important clips here.<br>Available even when the recorder is offline.</p>`}`;
+        else if(state.page==='recordings'){
+          const shown=clips.filter(c=>state.filter==='All'||(state.filter==='Saved'?state.saved.includes(c.id):c.type===state.filter));
+          content.innerHTML=`<p class="utr-eyebrow">Your footage</p><h2>Recordings</h2><p class="utr-muted">Find the moment. Keep what matters.</p><div class="utr-filters" aria-label="Filter recordings">${['All','Events','Parking','Saved'].map(f=>`<button type="button" class="cursor-interaction" data-filter="${f}" aria-pressed="${state.filter===f}">${f}</button>`).join('')}</div>${!state.connected?`<div class="utr-callout">${icon('wifi-off')}<span>Recorder offline. These are sample clips for exploring the design.</span></div>`:''}<div class="utr-section-head"><h3>Today</h3><span>DEMO CLIPS</span></div>${shown.length?shown.map(clipRow).join(''):'<div class="utr-empty">No saved clips yet.<br>Open a sample clip to save it.</div>'}`;
+        }else content.innerHTML=`<p class="utr-eyebrow">Make it yours</p><h2>Settings</h2>${connection()}<div class="utr-section-head"><h3>Recording</h3><span>PREVIEW ONLY</span></div><label class="utr-setting"><span>Record audio<small>Include sound in your recordings</small></span><input type="checkbox" data-setting="audio" ${state.audio?'checked':''}></label><label class="utr-setting"><span>GPS overlay<small>Show location data on footage</small></span><input type="checkbox" data-setting="gps" ${state.gps?'checked':''}></label><label class="utr-setting"><span>Impact sensitivity<small>When to capture an event</small></span><select data-setting="sensitivity" aria-label="Impact sensitivity">${['Low','Medium','High'].map(v=>`<option ${state.sensitivity===v?'selected':''}>${v}</option>`).join('')}</select></label><div class="utr-section-head"><h3>Connection</h3></div><button type="button" class="utr-secondary cursor-interaction" data-action="connect">${icon('wifi')}Connection setup${icon('chevron-right')}</button><button type="button" class="utr-secondary cursor-interaction" data-action="help">${icon('circle-help')}Connection help${icon('chevron-right')}</button><p class="utr-notice" aria-live="polite">Changes in this concept do not affect your recorder.</p>`;
+        icons();
+      }
+      function close(){overlay.hidden=true;sheet.innerHTML='';content.inert=false;root.querySelector('.utr-nav').inert=false;if(returnFocus?.isConnected)returnFocus.focus();}
+      function dialog(title,body){
+        if(overlay.hidden)returnFocus=document.activeElement;sheet.innerHTML=`<div class="utr-sheet-head"><h2 id="utr-dialog-title">${title}</h2><button type="button" class="utr-close cursor-interaction" data-action="close" aria-label="Close dialog">${icon('x')}</button></div>${body}`;overlay.hidden=false;content.inert=true;root.querySelector('.utr-nav').inert=true;icons();sheet.querySelector('button').focus();
+      }
+      function connect(){dialog('Connect your recorder',`<p class="utr-muted">A guided connection, with a clear status at every step.</p><ol class="utr-steps"><li><span class="utr-step-num">1</span><span>Have your recorder powered on<small>Set up while parked, near your vehicle.</small></span></li><li><span class="utr-step-num">2</span><span>Join the recorder’s Wi-Fi<small>The native app will guide you through joining its network.</small></span></li><li><span class="utr-step-num">3</span><span>Check that the camera responds<small>Wi-Fi connected and camera ready are separate checks.</small></span></li></ol><button type="button" class="utr-primary cursor-interaction" data-action="simulate">Preview successful connection${icon('arrow-right')}</button><p class="utr-notice">Simulation only. No network connection is made.</p>`);}
+      function help(){dialog('Let’s get connected',`<p class="utr-muted">The app should show exactly where the connection stopped.</p><ol class="utr-steps"><li><span class="utr-step-num">1</span><span>Recorder network unavailable<small>Check that the recorder is powered on and nearby.</small></span></li><li><span class="utr-step-num">2</span><span>Phone joined a different network<small>Verify you joined the recorder’s Wi-Fi, rather than the car hotspot.</small></span></li><li><span class="utr-step-num">3</span><span>Wi-Fi joined, camera not responding<small>Check the app’s local network access, then retry the camera connection.</small></span></li></ol><button type="button" class="utr-primary cursor-interaction" data-action="connect">Try connection setup</button><p class="utr-notice">Example guidance; diagnosis requires the real device.</p>`);}
+      root.addEventListener('click',e=>{
+        const b=e.target.closest('button');if(!b)return;
+        if(b.dataset.page){state.page=b.dataset.page;render();persist();return;}
+        if(b.dataset.camera){state.camera=b.dataset.camera;render();persist();return;}
+        if(b.dataset.filter){state.filter=b.dataset.filter;render();persist();return;}
+        if(b.dataset.clip){const c=clips.find(x=>x.id===Number(b.dataset.clip));dialog(c.name,`<p class="utr-muted">Today · ${c.time} · ${c.camera}</p><div class="utr-view"><div class="utr-view-center">${icon('video')}<span>Sample clip · ${c.duration}</span></div></div><p class="utr-muted" style="margin-bottom:20px">The native app will play the selected recording here.</p><button type="button" class="utr-primary cursor-interaction" data-save="${c.id}">${icon('download')}${state.saved.includes(c.id)?'Saved in demo':'Save clip · demo'}</button><p class="utr-notice" aria-live="polite">No video file is attached to this concept.</p>`);return;}
+        if(b.dataset.save){const id=Number(b.dataset.save);if(!state.saved.includes(id))state.saved.push(id);b.innerHTML=icon('check')+'Saved in demo';sheet.querySelector('.utr-notice').textContent='Added to the demo’s Saved tab.';render();icons();persist();return;}
+        switch(b.dataset.action){case'connect':connect();break;case'help':help();break;case'close':close();break;case'simulate':state.connected=true;state.page='camera';close();render();persist();break;case'disconnect':state.connected=false;render();persist();break;case'saved':state.page='recordings';state.filter='Saved';render();persist();break;case'recordings':state.page='recordings';state.filter='All';render();persist();break;}
+      });
+      root.addEventListener('change',e=>{const key=e.target.dataset.setting;if(!key)return;state[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;content.querySelector('.utr-notice').textContent='Preview updated. Your recorder has not been changed.';persist();});
+      root.addEventListener('keydown',e=>{if(overlay.hidden)return;if(e.key==='Escape'){e.preventDefault();close();}if(e.key==='Tab'){const list=[...sheet.querySelectorAll('button,input,select')];const first=list[0],last=list[list.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+      window.addEventListener('openai:set_globals',e=>{const next=e.detail?.globals?.widgetState?.privateContent;if(next?.version===1&&JSON.stringify(next.state)!==JSON.stringify(state)){Object.assign(state,defaults,next.state);close();render();}});
+      render();
+      if(globalThis.Tweak){const design={rounding:18};const app=root.querySelector('.utr-app');const tweak=new Tweak({container:app,onChange:()=>app.style.setProperty('--utr-preview-radius',design.rounding+'px')});tweak.addSlider(design,'rounding',{label:'Preview corner radius',min:0,max:24,unit:'px'});}
+    })();
+  </script>
+</div>

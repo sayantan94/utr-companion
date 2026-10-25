@@ -1,0 +1,208 @@
+<div id="audi-utr" class="viz-dotted-background">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+#audi-utr{padding:20px 8px;font-family:'Titillium Web',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#audi-utr *{box-sizing:border-box}
+#audi-utr .au-app{--au-bg:#12121a;--au-panel:#1b1b25;--au-raised:#24242e;--au-line:#363640;--au-ink:#f7f7f9;--au-muted:#b2b2bf;--au-red:#ff2d00;--au-silver:#d7d8dd;--au-warn:#f1bd78;max-width:414px;width:100%;margin:auto;background:var(--au-bg);color:var(--au-ink);border:1px solid var(--au-line);border-radius:26px;overflow:hidden;box-shadow:0 24px 70px #0003;font-size:15px;line-height:1.4;color-scheme:dark}
+#audi-utr button,#audi-utr select,#audi-utr input{font:inherit;color:inherit}
+#audi-utr button{touch-action:manipulation}
+#audi-utr button:disabled{opacity:.5}
+#audi-utr .au-brandbar{display:flex;justify-content:space-between;align-items:center;padding:26px 24px 20px;gap:16px}
+#audi-utr .au-brand{display:flex;gap:12px;align-items:center}
+#audi-utr .au-rings{display:flex;padding-right:5px;align-items:center;color:var(--au-silver)}
+#audi-utr .au-rings span{width:22px;height:22px;border:1.8px solid currentColor;border-radius:50%;margin-right:-5px}
+#audi-utr .au-brandname{font-weight:700;font-size:12px;letter-spacing:2px;border-left:1px solid var(--au-line);padding-left:11px}
+#audi-utr .au-demo{font-size:10px;letter-spacing:1.8px;color:var(--au-muted)}
+#audi-utr .au-stripe{height:4px;background:linear-gradient(132deg,var(--au-red) 0 79%,var(--au-bg) 79% 80%,var(--au-silver) 80% 83%,var(--au-bg) 83% 84%,var(--au-silver) 84% 87%,var(--au-bg) 87%)}
+#audi-utr main{padding:25px 24px 24px;min-height:610px}
+#audi-utr h1{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:32px;line-height:1.05;letter-spacing:-1.5px;text-transform:uppercase;margin:5px 0 13px}
+#audi-utr h2{font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-.2px;margin:0}
+#audi-utr h3{font-size:14px;font-weight:600;margin:0}
+#audi-utr p{margin:0}
+#audi-utr .au-eyebrow{font-size:10px;letter-spacing:1.9px;text-transform:uppercase;color:var(--au-muted)}
+#audi-utr .au-muted{font-size:12px;color:var(--au-muted);line-height:1.5}
+#audi-utr .au-headrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#audi-utr .au-status{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--au-muted)}
+#audi-utr .au-dot{width:6px;height:6px;border-radius:50%;background:var(--au-red);flex-shrink:0}
+#audi-utr .au-dot.off{background:var(--au-muted)}
+#audi-utr .au-camera-select{display:flex;gap:0;margin:22px 0 16px;border-bottom:1px solid var(--au-line)}
+#audi-utr .au-camera-select button{flex:1;min-height:44px;border:0;border-bottom:2px solid transparent;background:transparent;padding:10px 6px;color:var(--au-muted);font-size:13px}
+#audi-utr .au-camera-select button[aria-pressed=true]{color:var(--au-ink);border-bottom-color:var(--au-red);font-weight:700}
+#audi-utr .au-scene{position:relative;height:108px;isolation:isolate;overflow:hidden;border-radius:5px;background:linear-gradient(#8996a4 0%,#c6cbd0 44%,#56615c 45%,#333e38 63%,#474c50 64%)}
+#audi-utr .au-scene:before{content:'';position:absolute;inset:44% 0 -1%;background:linear-gradient(90deg,#a6aaa9 0 1%,#434a50 2% 98%,#a6aaa9 99%);clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);z-index:1}
+#audi-utr .au-scene:after{content:'';position:absolute;inset:47% 49.4% 0;background:repeating-linear-gradient(transparent 0 10px,#d4cdb4 10px 19px);transform:perspective(32px) rotateX(26deg);z-index:2}
+#audi-utr .au-scene.rear{background:linear-gradient(90deg,transparent 0 6%,#4a5058 6% 18%,transparent 18% 26%,#646c74 26% 38%,transparent 38% 70%,#69717b 70% 88%,transparent 88%) 0 27px/100% 39px no-repeat,linear-gradient(#afb9c6 0 51%,#7c8488 52% 64%,#444b55 65%)}
+#audi-utr .au-scene.dusk{filter:sepia(.24) brightness(.8)}
+#audi-utr .au-scene.rear .au-car{position:absolute;left:60%;top:64%;width:23%;height:18%;border-radius:35% 35% 7% 7%;z-index:3;background:linear-gradient(#111b26 0 38%,#c4c9cd 40% 68%,#30343a 70%);box-shadow:-3px 5px 0 -1px #191b20,3px 5px 0 -1px #191b20}
+#audi-utr .au-scene .au-horizon{position:absolute;left:-3%;right:-3%;bottom:0;height:10%;background:#181d23dd;border-radius:65% 65% 0 0;z-index:4}
+#audi-utr .au-scene.large{height:211px;margin-top:0}
+#audi-utr .au-scene.large.rear{background-size:100% 80px,100% 100%;background-position:0 40px,0 0}
+#audi-utr .au-tag{position:absolute;left:10px;top:10px;z-index:5;color:#fff;background:#13151bd9;font-size:10px;font-weight:600;letter-spacing:1px;padding:4px 7px;border-radius:3px}
+#audi-utr .au-length{position:absolute;right:8px;bottom:8px;z-index:5;background:#13151bdf;color:#fff;font-size:10px;padding:3px 5px;border-radius:3px;font-variant-numeric:tabular-nums}
+#audi-utr .au-live-tag{position:absolute;right:10px;top:10px;z-index:5;font-size:10px;letter-spacing:.5px;color:#fff;background:#1a1b20e8;padding:4px 6px;display:flex;align-items:center;gap:5px;border-radius:3px}
+#audi-utr .au-feed-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--au-panel);padding:12px;font-size:11px;color:var(--au-muted);border-radius:0 0 5px 5px}
+#audi-utr .au-feed-footer .au-icon{width:34px;min-height:34px}
+#audi-utr .au-icon{display:grid;place-items:center;min-width:40px;min-height:40px;border:1px solid var(--au-line);background:transparent;border-radius:4px}
+#audi-utr .au-plain{border:0;background:transparent;min-height:44px;padding:8px 0;color:var(--au-muted);font-size:12px;display:inline-flex;align-items:center;gap:7px}
+#audi-utr .au-primary{border:0;background:var(--au-red);color:#101017;width:100%;min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 15px;font-size:13px;font-weight:700;border-radius:4px;margin-top:18px}
+#audi-utr .au-secondary{border:1px solid var(--au-line);background:transparent;width:100%;min-height:44px;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 13px;font-size:12px;border-radius:4px;margin-top:10px}
+#audi-utr .au-linkrow{display:flex;align-items:center;gap:12px;width:100%;border:0;border-bottom:1px solid var(--au-line);padding:19px 0;background:transparent;text-align:left}
+#audi-utr .au-linkrow>svg{flex-shrink:0;color:var(--au-muted)}
+#audi-utr .au-linkrow>span{flex:1}
+#audi-utr .au-linkrow strong{display:block;font-size:14px;font-weight:600}
+#audi-utr .au-linkrow small{display:block;font-size:11px;color:var(--au-muted);margin-top:4px;line-height:1.5}
+#audi-utr .au-auto{font-size:10px;letter-spacing:1px;color:var(--au-muted);font-weight:600}
+#audi-utr .au-clock{margin-top:22px;padding:17px 0;border-top:1px solid var(--au-line);border-bottom:1px solid var(--au-line);display:flex;gap:12px;align-items:center}
+#audi-utr .au-clock>svg{color:var(--au-muted);flex-shrink:0}
+#audi-utr .au-clock>div{flex:1}
+#audi-utr .au-clock strong{font-size:13px;font-weight:600;display:block}
+#audi-utr .au-clock small{font-size:11px;color:var(--au-muted);display:block;margin-top:4px;line-height:1.5;overflow-wrap:anywhere}
+#audi-utr .au-sources{display:flex;gap:18px;border-bottom:1px solid var(--au-line);margin-top:18px}
+#audi-utr .au-sources button{background:transparent;border:0;border-bottom:2px solid transparent;min-height:44px;color:var(--au-muted);font-size:13px;padding:10px 0}
+#audi-utr .au-sources button[aria-pressed=true]{color:var(--au-ink);border-bottom-color:var(--au-silver)}
+#audi-utr .au-sources small{font-size:10px;color:var(--au-muted);margin-left:5px}
+#audi-utr .au-toolbar{display:flex;align-items:center;justify-content:space-between;gap:7px;margin:12px 0 0}
+#audi-utr .au-mini-tabs{display:flex;gap:2px;align-items:center}
+#audi-utr .au-mini-tabs button{font-size:12px;min-height:40px;padding:8px 10px;border:0;background:transparent;color:var(--au-muted);border-radius:4px}
+#audi-utr .au-mini-tabs button[aria-pressed=true]{background:var(--au-raised);color:var(--au-ink)}
+#audi-utr .au-sort{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0 13px;font-size:11px;color:var(--au-muted)}
+#audi-utr .au-sort select{font-size:12px;background:transparent;border:0;min-height:38px;max-width:160px}
+#audi-utr .au-warning{display:flex;align-items:center;gap:10px;width:100%;padding:13px 0;border:0;border-top:1px solid var(--au-line);border-bottom:1px solid var(--au-line);background:transparent;text-align:left;color:var(--au-warn);margin:8px 0 17px}
+#audi-utr .au-warning>span{flex:1;font-size:12px}
+#audi-utr .au-warning small{display:block;color:var(--au-muted);font-size:11px;margin-top:3px;line-height:1.45}
+#audi-utr .au-warning svg{flex-shrink:0}
+#audi-utr .au-grouphead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:19px 0 11px}
+#audi-utr .au-grouphead small{color:var(--au-muted);font-size:10px;letter-spacing:.6px}
+#audi-utr .au-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px 12px}
+#audi-utr .au-clip{padding:0;border:0;background:transparent;text-align:left;min-width:0}
+#audi-utr .au-clip strong{display:block;font-size:13px;font-weight:600;line-height:1.4;margin-top:8px}
+#audi-utr .au-clip small{display:block;font-size:11px;color:var(--au-muted);margin-top:3px}
+#audi-utr .au-clip .au-alert{color:var(--au-warn)}
+#audi-utr .au-list{display:grid;gap:13px}
+#audi-utr .au-list .au-clip{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center}
+#audi-utr .au-list .au-scene{height:78px}
+#audi-utr .au-list .au-clip strong{margin-top:0}
+#audi-utr .au-pair{display:grid;gap:9px}
+#audi-utr .au-pair .au-scene.large{height:150px}
+#audi-utr .au-playback{display:flex;gap:10px;align-items:center;padding:13px 0}
+#audi-utr .au-playback input{flex:1;min-width:0;accent-color:var(--au-red)}
+#audi-utr .au-playback output{font-size:11px;color:var(--au-muted);font-variant-numeric:tabular-nums;min-width:33px}
+#audi-utr .au-facts{margin:12px 0 0}
+#audi-utr .au-facts>div{padding:13px 0;border-bottom:1px solid var(--au-line)}
+#audi-utr dt{font-size:11px;color:var(--au-muted);margin-bottom:4px}
+#audi-utr dd{font-size:13px;margin:0;overflow-wrap:anywhere}
+#audi-utr .au-form{margin-top:18px}
+#audi-utr .au-form label{display:block;font-size:12px}
+#audi-utr .au-form input{display:block;min-width:0;width:100%;max-width:100%;min-height:46px;background:var(--au-panel);border:1px solid var(--au-line);padding:10px;border-radius:4px;font-size:16px;margin:8px 0 12px}
+#audi-utr .au-message{font-size:11px;line-height:1.5;color:var(--au-muted);margin-top:12px;min-height:16px}
+#audi-utr [role=alert]{color:var(--au-warn)}
+#audi-utr .au-section{margin-top:27px}
+#audi-utr .au-section-title{display:flex;align-items:center;gap:9px;margin-bottom:3px}
+#audi-utr .au-section-title:before{content:'';width:3px;height:13px;background:var(--au-red);transform:skew(-18deg)}
+#audi-utr .au-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid var(--au-line);font-size:13px}
+#audi-utr .au-row small{display:block;color:var(--au-muted);font-size:11px;margin-top:4px;line-height:1.5}
+#audi-utr .au-row select{min-height:42px;max-width:128px;border:1px solid var(--au-line);background:var(--au-panel);border-radius:4px;padding:8px;font-size:12px}
+#audi-utr .au-row input[type=checkbox]{appearance:auto;width:21px;height:21px;accent-color:var(--au-red);flex-shrink:0}
+#audi-utr .au-empty{padding:45px 8px;text-align:center}
+#audi-utr .au-empty>svg{width:32px;height:32px;color:var(--au-muted);margin-bottom:17px}
+#audi-utr .au-empty h2{margin-bottom:9px}
+#audi-utr .au-nav{display:flex;background:#171720;border-top:1px solid var(--au-line);padding:8px 12px 13px;gap:5px}
+#audi-utr .au-nav button{flex:1;border:0;border-radius:4px;background:transparent;color:var(--au-muted);padding:9px 4px;min-height:52px;display:flex;align-items:center;flex-direction:column;gap:6px;font-size:11px}
+#audi-utr .au-nav button[aria-current=page]{color:var(--au-red)}
+#audi-utr .au-nav svg{width:20px;height:20px}
+#audi-utr .au-footer{font-size:10px;line-height:1.5;text-align:center;color:var(--au-muted);margin-top:20px}
+@media(max-width:370px){#audi-utr{padding:8px 0}#audi-utr main{padding:22px 17px}#audi-utr .au-brandbar{padding:22px 17px 18px}#audi-utr h1{font-size:29px}#audi-utr .au-grid{gap:17px 9px}#audi-utr .au-scene{height:93px}#audi-utr .au-scene.large{height:180px}#audi-utr .au-pair .au-scene.large{height:130px}#audi-utr .au-mini-tabs button{padding:8px}#audi-utr .au-headrow{align-items:flex-start}#audi-utr .au-status{font-size:10px}}
+</style>
+<article class="au-app" aria-label="Audi UTR app concept">
+<header class="au-brandbar"><div class="au-brand"><div class="au-rings" role="img" aria-label="Audi"><span></span><span></span><span></span><span></span></div><span class="au-brandname">UTR</span></div><span class="au-demo">DESIGN DEMO</span></header>
+<div class="au-stripe" aria-hidden="true"></div>
+<main></main>
+<nav class="au-nav" aria-label="App navigation"><button type="button" data-page="camera"><i data-lucide="video" aria-hidden="true"></i>Live</button><button type="button" data-page="library"><i data-lucide="images" aria-hidden="true"></i>Library</button><button type="button" data-page="settings"><i data-lucide="sliders-horizontal" aria-hidden="true"></i>Recorder</button></nav>
+</article>
+<script>
+(()=>{
+const root=document.getElementById('audi-utr'),main=root.querySelector('main'),app=root.querySelector('.au-app');
+const pad=n=>String(n).padStart(2,'0');
+const localDate=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const localStamp=d=>`${localDate(d)}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+const today=localDate(new Date()),yesterdayDate=new Date();yesterdayDate.setDate(yesterdayDate.getDate()-1);const yesterday=localDate(yesterdayDate);
+const moments=[
+{id:'a',name:'Parking event',raw:'2031-04-01T10:19:36',saved:`${today}T10:42`,duration:20,kind:'Parking'},
+{id:'b',name:'Driving clip',raw:`${today}T09:18:00`,saved:`${today}T10:41`,duration:60,kind:'Driving'},
+{id:'c',name:'Impact event',raw:'2031-04-03T17:42:06',saved:`${yesterday}T18:05`,duration:20,kind:'Event'},
+{id:'d',name:'Driving clip',raw:`${yesterday}T17:15:00`,saved:`${yesterday}T18:04`,duration:60,kind:'Driving'}];
+const clips=moments.flatMap(m=>['front','rear'].map(cam=>({...m,id:`${m.id}-${cam}`,pair:m.id,cam,file:`${m.raw.replace(/[-:]/g,'').replace('T','_')}_${cam}.MP4`})));
+const defaults={page:'camera',connected:true,liveCam:'front',paused:false,source:'phone',sort:'saved',filter:'front',layout:'grid',review:false,selected:'a-front',view:'front',corrections:{},driving:'2',parking:'3',radar:'3',audio:false,gps:true,rearRotation:'0',channels:'both'};
+function read(s){const st=s?.version===3&&s.state?{...defaults,...s.state}:{...defaults};st.corrections={...st.corrections};return st;}
+let state=read(window.openai?.widgetState?.privateContent),editing=false,notice='',playhead=0,playing=false,timer=null;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon=n=>`<i data-lucide="${n}" aria-hidden="true"></i>`;
+const icons=()=>globalThis.lucide?.createIcons({attrs:{width:18,height:18}});
+const persist=()=>window.openai?.setWidgetState({modelContent:{screen:state.page,connection:'simulated',camera:state.liveCam,libraryCamera:state.filter,clock:'automatic from phone'},privateContent:{version:3,state}})?.catch(()=>{});
+const fmt=d=>{const [y,m,day]=d.slice(0,10).split('-');return `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m)-1]} ${Number(day)}, ${y}`;};
+const time=d=>{const h=Number(d.slice(11,13));return `${h%12||12}:${d.slice(14,16)} ${h>=12?'PM':'AM'}`;};
+const duration=n=>`${Math.floor(n/60)}:${pad(n%60)}`;
+const cameraName=c=>c==='rear'?'Rear':'Front';
+const suspect=c=>!state.corrections[c.id]&&c.raw.slice(0,10)>today;
+const capture=c=>state.corrections[c.id]||c.raw;
+const primary=(action,label,ic='arrow-right')=>`<button type="button" class="au-primary" data-action="${action}">${label}${icon(ic)}</button>`;
+const secondary=(action,label)=>`<button type="button" class="au-secondary" data-action="${action}">${label}</button>`;
+const status=()=>`<span class="au-status"><span class="au-dot ${state.connected?'':'off'}"></span>${state.connected?'Connected · demo':'Disconnected'}</span>`;
+function scene(cam,large=false,seconds=60,live=false,dusk=false){return `<div class="au-scene ${cam==='rear'?'rear':''} ${large?'large':''} ${dusk?'dusk':''}" aria-label="Illustrative ${cam} camera view"><span class="au-tag">${cameraName(cam).toUpperCase()}</span><span class="au-car" aria-hidden="true"></span><span class="au-horizon" aria-hidden="true"></span>${live?`<span class="au-live-tag">${state.paused?'PAUSED':`<span class="au-dot"></span>LIVE · DEMO`}</span>`:`<span class="au-length">${duration(seconds)}</span>`}</div>`;}
+function clock(){return `<div class="au-clock">${icon('clock-3')}<div><strong>Date & time</strong><small>Uses your iPhone clock automatically.</small><small data-clock>${deviceTime()}</small></div><span class="au-auto">AUTO</span></div>`;}
+function deviceTime(){const now=new Date();return esc(`${now.toLocaleDateString([],{month:'short',day:'numeric'})} · ${now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})} · ${Intl.DateTimeFormat().resolvedOptions().timeZone}`);}
+function camera(){let html=`<div class="au-headrow"><p class="au-eyebrow">Universal Traffic Recorder</p>${status()}</div><h1>Live view</h1>`;
+if(!state.connected)return html+`<div class="au-empty">${icon('wifi-off')}<h2>Recorder out of range</h2><p class="au-muted">Live video returns when you reconnect.<br>Saved clips are always available.</p>${primary('connect-demo','Preview connected state','wifi')}${secondary('phone','Open saved clips')}</div>${clock()}<p class="au-footer">Design preview · No recorder connection</p>`;
+html+=`<div class="au-camera-select" aria-label="Live camera">${['front','rear'].map(c=>`<button type="button" data-live-cam="${c}" aria-pressed="${state.liveCam===c}">${cameraName(c)} camera</button>`).join('')}</div>${scene(state.liveCam,true,60,true)}<div class="au-feed-footer"><span>${state.paused?'Preview paused':'Illustrative feed'} · ${cameraName(state.liveCam)}</span><button type="button" class="au-icon" data-action="pause-live" aria-label="${state.paused?'Resume':'Pause'} live preview">${icon(state.paused?'play':'pause')}</button></div><button type="button" class="au-linkrow" data-action="recorder-library">${icon('memory-stick')}<span><strong>Recordings on recorder</strong><small>Browse front and rear clips</small></span>${icon('chevron-right')}</button>${clock()}<button type="button" class="au-plain" data-action="disconnect-demo">${icon('wifi-off')}Preview disconnected state</button><p class="au-footer">Simulated connection · Illustrative footage</p>`;return html;
+}
+const clipRow=c=>`<button type="button" class="au-clip" data-clip="${c.id}" aria-label="Open ${cameraName(c.cam)} ${esc(c.name)}, ${suspect(c)?'date needs review':time(capture(c))}">${scene(c.cam,false,c.duration,false,c.pair==='c')}<span><strong>${c.name}</strong><small class="${suspect(c)?'au-alert':''}">${suspect(c)?'Date needs review':`${time(capture(c))}${state.corrections[c.id]?' · Corrected':''}`}</small></span></button>`;
+function gallery(){let html=`<p class="au-eyebrow">Your recordings</p><h1>Library</h1><div class="au-sources" aria-label="Recording location"><button type="button" data-source="phone" aria-pressed="${state.source==='phone'}">On iPhone <small>8</small></button><button type="button" data-source="recorder" aria-pressed="${state.source==='recorder'}">On recorder</button></div>`;
+if(state.source==='recorder'&&!state.connected)return html+`<div class="au-empty">${icon('wifi-off')}<h2>Recorder disconnected</h2><p class="au-muted">Connect near your car to browse its SD card.</p>${primary('connect-demo','Preview connected state','wifi')}${secondary('phone','Open saved clips')}</div>`;
+html+=`<div class="au-toolbar"><div class="au-mini-tabs" aria-label="Filter camera">${['all','front','rear'].map(c=>`<button type="button" data-filter="${c}" aria-pressed="${state.filter===c}">${c==='all'?'All':cameraName(c)}</button>`).join('')}</div><button type="button" class="au-icon" data-action="layout" aria-label="Switch to ${state.layout==='grid'?'list':'grid'} view">${icon(state.layout==='grid'?'list':'layout-grid')}</button></div>`;
+const pool=clips.filter(c=>state.filter==='all'||c.cam===state.filter),count=pool.filter(suspect).length,sort=state.source==='recorder'?'recorded':state.sort;
+html+=`<div class="au-sort"><span>${pool.length} ${state.filter==='all'?'clips':state.filter+' clips'}</span>${state.source==='phone'?`<label>Sort <select aria-label="Sort clips"><option value="saved" ${sort==='saved'?'selected':''}>Date saved</option><option value="recorded" ${sort==='recorded'?'selected':''}>Recording date</option></select></label>`:'<span>Recording date</span>'}</div>`;
+if(count)html+=`<button type="button" class="au-warning" data-action="review">${icon('calendar-clock')}<span>${count} clip dates need review<small>Automatic clock updates won’t change old clips.</small></span>${icon('chevron-right')}</button>`;
+if(state.review)html+=secondary('all-clips','Show all clips');
+const shown=pool.filter(c=>!state.review||suspect(c));shown.sort((a,b)=>(sort==='saved'?b.saved:suspect(b)?'':capture(b)).localeCompare(sort==='saved'?a.saved:suspect(a)?'':capture(a)));
+const groups=new Map();for(const c of shown){const k=sort==='saved'?c.saved.slice(0,10):suspect(c)?'unknown':capture(c).slice(0,10);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(c);}
+for(const [date,items]of groups)html+=`<div class="au-grouphead"><h3>${date==='unknown'?'Date needs review':fmt(date)}</h3><small>${sort==='saved'?'SAVED':date==='unknown'?'UNVERIFIED':'RECORDED'}</small></div><div class="au-${state.layout}">${items.map(clipRow).join('')}</div>`;
+if(!shown.length)html+=`<div class="au-empty"><h2>All dates reviewed</h2><p class="au-muted">Your library corrections are saved in this demo.</p></div>`;
+return html+`<p class="au-footer">Sample clips · Front and rear are separate files</p>`;
+}
+function detail(){const c=clips.find(c=>c.id===state.selected)||clips[0],other=clips.find(x=>x.pair===c.pair&&x.cam!==c.cam);const shown=state.view==='both'?[c.cam==='front'?c:other,c.cam==='rear'?c:other]:[c];
+return `<button type="button" class="au-plain" data-action="library">${icon('chevron-left')}Library</button><p class="au-eyebrow">${c.kind} · ${state.source==='phone'?'On iPhone':'On recorder'}</p><h1>${c.name}</h1><div class="au-camera-select" aria-label="Playback camera">${['front','rear','both'].map(cam=>`<button type="button" data-play-cam="${cam}" aria-pressed="${state.view===cam}">${cam==='both'?'Both':cameraName(cam)}</button>`).join('')}</div><div class="${state.view==='both'?'au-pair':''}">${shown.map(x=>scene(x.cam,true,x.duration,false,x.pair==='c')).join('')}</div><div class="au-playback"><button type="button" class="au-icon" data-action="play" aria-label="${playing?'Pause':'Play'} clip preview">${icon(playing?'pause':'play')}</button><input type="range" aria-label="Playback position" min="0" max="${c.duration}" value="${playhead}"><output data-playhead>${duration(playhead)}</output></div><p class="au-muted">${state.view==='both'?'Matched sample clips · Shared playback position':'Illustrative clip preview · '+cameraName(c.cam)}</p>${shown.some(suspect)?`<div class="au-warning" style="margin-top:18px">${icon('calendar-clock')}<span>Original camera date is in the future.<small>The actual recording date is unknown.</small></span></div>`:''}<dl class="au-facts"><div><dt>${state.view==='both'?'Front clip date':'Recording date'}${state.corrections[c.id]?' · corrected by you':''}</dt><dd>${fmt(capture(c))} · ${time(capture(c))}</dd></div>${state.view==='both'?`<div><dt>Rear clip date${state.corrections[other.id]?' · corrected by you':''}</dt><dd>${fmt(capture(other))} · ${time(capture(other))}</dd></div>`:''}${state.source==='phone'?`<div><dt>Saved to iPhone · sample</dt><dd>${fmt(c.saved)} · ${time(c.saved)}</dd></div>`:''}<div><dt>Original ${c.cam} filename</dt><dd>${c.file}</dd></div>${state.corrections[c.id]?`<div><dt>Original camera date · retained</dt><dd>${fmt(c.raw)} · ${time(c.raw)}</dd></div>`:''}</dl>${state.source==='phone'?(editing?`<div class="au-form"><label>Correct ${c.cam} recording date<input type="datetime-local" name="correctedDate" required max="${localStamp(new Date())}" value="${esc(state.corrections[c.id]||'')}"></label><p class="au-muted">Changes this clip’s library label. The original file and the other camera’s date stay intact.</p><p class="au-message" role="alert"></p>${primary('save-date','Save corrected date','check')}${secondary('cancel-edit','Cancel')}</div>`:secondary('edit',`Correct ${c.cam} clip date`)):''}${state.corrections[c.id]&&!editing?secondary('undo','Undo date correction'):''}<p class="au-message" aria-live="polite">${esc(notice)}</p>`;
+}
+function settings(){const picker=(key,label,sub,options)=>`<label class="au-row"><span>${label}<small>${sub}</small></span><select data-setting="${key}" aria-label="${label}">${options.map(([value,name])=>`<option value="${value}" ${state[key]===value?'selected':''}>${name}</option>`).join('')}</select></label>`;const levels=n=>Array.from({length:n+1},(_,i)=>[String(i),i?String(i):'Off']);
+return `<div class="au-headrow"><p class="au-eyebrow">Your device</p>${status()}</div><h1>Recorder</h1>${clock()}<p class="au-muted" style="margin-top:9px">Date, time and timezone follow your iPhone when connected. No manual setup.</p><div class="au-section"><h2 class="au-section-title">Cameras</h2>${picker('channels','Recording channels','Choose which cameras record',[['both','Front + rear'],['front','Front only']])}${picker('rearRotation','Rear orientation','Correct an inverted rear view',[['0','0°'],['180','180°']])}</div><div class="au-section"><h2 class="au-section-title">Sensors</h2>${picker('driving','Driving G-sensor','Impact detection while driving',levels(5))}${picker('parking','Parking G-sensor','Impact detection while parked',levels(5))}${picker('radar','Parking radar','Motion detection while parked',levels(3))}</div><div class="au-section"><h2 class="au-section-title">Recording</h2><label class="au-row"><span>Microphone<small>Include audio in clips</small></span><input type="checkbox" data-setting="audio" ${state.audio?'checked':''}></label><label class="au-row"><span>GPS<small>Save location with recordings</small></span><input type="checkbox" data-setting="gps" ${state.gps?'checked':''}></label></div>${primary('settings-preview','Preview settings','check')}<p class="au-message" aria-live="polite">${esc(notice||'Demo settings. Your recorder is unchanged.')}</p><p class="au-footer">Sample sensor ranges · Actual controls depend on firmware</p>`;
+}
+function stopPlayback(){playing=false;if(timer)clearInterval(timer);timer=null;}
+function render(){main.innerHTML=state.page==='camera'?camera():state.page==='library'?gallery():state.page==='detail'?detail():settings();root.querySelectorAll('[data-page]').forEach(b=>b.setAttribute('aria-current',b.dataset.page===(state.page==='detail'?'library':state.page)?'page':'false'));root.querySelectorAll('button').forEach(b=>b.classList.add('cursor-interaction'));icons();}
+function saveDate(){const form=main.querySelector('.au-form'),input=form.querySelector('input'),value=input.value;input.max=localStamp(new Date());if(!input.validity.valid||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)||value>input.max){form.querySelector('[role=alert]').textContent='Choose a valid recording date no later than the device time.';return false;}state.corrections[state.selected]=value;editing=false;notice='Library date updated. Original footage is unchanged.';return true;}
+root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;notice='';
+if(b.dataset.page){stopPlayback();state.page=b.dataset.page;editing=false;}else if(b.dataset.liveCam){state.liveCam=b.dataset.liveCam;}else if(b.dataset.source){state.source=b.dataset.source;state.review=false;}else if(b.dataset.filter){state.filter=b.dataset.filter;}else if(b.dataset.clip){stopPlayback();state.selected=b.dataset.clip;state.page='detail';state.view=clips.find(c=>c.id===state.selected).cam;playhead=0;editing=false;}else if(b.dataset.playCam){const current=clips.find(c=>c.id===state.selected);state.view=b.dataset.playCam;state.selected=clips.find(c=>c.pair===current.pair&&c.cam===(state.view==='both'?'front':state.view)).id;editing=false;}else switch(b.dataset.action){
+case'connect-demo':state.connected=true;state.page='camera';state.paused=false;break;
+case'disconnect-demo':state.connected=false;state.page='camera';break;
+case'pause-live':state.paused=!state.paused;break;
+case'recorder-library':state.page='library';state.source='recorder';state.review=false;break;
+case'phone':state.page='library';state.source='phone';state.review=false;break;
+case'library':stopPlayback();state.page='library';editing=false;break;
+case'review':state.review=true;break;
+case'all-clips':state.review=false;break;
+case'layout':state.layout=state.layout==='grid'?'list':'grid';break;
+case'edit':stopPlayback();editing=true;break;
+case'cancel-edit':editing=false;break;
+case'save-date':if(!saveDate())return;break;
+case'undo':delete state.corrections[state.selected];notice='Original camera date restored.';break;
+case'settings-preview':notice='Preview updated. No changes sent to your recorder.';break;
+case'play':if(playing){stopPlayback();}else{const clip=clips.find(c=>c.id===state.selected);if(playhead>=clip.duration)playhead=0;playing=true;timer=setInterval(()=>{if(state.page!=='detail'){stopPlayback();return;}playhead=Math.min(playhead+1,clip.duration);const slider=main.querySelector('[aria-label="Playback position"]'),out=main.querySelector('[data-playhead]');if(slider)slider.value=playhead;if(out)out.textContent=duration(playhead);if(playhead===clip.duration){stopPlayback();render();}},1000);}break;
+default:return;}
+render();persist();});
+root.addEventListener('input',e=>{if(e.target.matches('[aria-label="Playback position"]')){playhead=Number(e.target.value);main.querySelector('[data-playhead]').textContent=duration(playhead);}});
+root.addEventListener('change',e=>{if(e.target.matches('[aria-label="Sort clips"]')){state.sort=e.target.value;render();persist();}else if(e.target.dataset.setting){state[e.target.dataset.setting]=e.target.type==='checkbox'?e.target.checked:e.target.value;notice='Demo setting changed. Nothing sent to the recorder.';main.querySelector('.au-message').textContent=notice;persist();}});
+root.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.name==='correctedDate'){e.preventDefault();if(saveDate()){render();persist();}}});
+window.addEventListener('openai:set_globals',e=>{const s=e.detail?.globals?.widgetState?.privateContent;if(s?.version===3&&JSON.stringify(s.state)!==JSON.stringify(state)){stopPlayback();state=read(s);editing=false;notice='';render();}});
+setInterval(()=>root.querySelectorAll('[data-clock]').forEach(el=>el.innerHTML=deviceTime()),15000);
+render();if(globalThis.Tweak){const design={layout:state.layout};const tweak=new Tweak({container:app,onChange:()=>{state.layout=design.layout;render();}});tweak.addSelect(design,'layout',{label:'Library layout',options:[{label:'Grid',value:'grid'},{label:'List',value:'list'}]});}
+})();
+</script>
+</div>
